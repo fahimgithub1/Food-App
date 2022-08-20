@@ -1,0 +1,10 @@
+.input input{
+    text-align: center;
+    width: 33px;
+    border: 1px solid rgb(186, 185, 185);
+    border-radius: 4px;
+}
+
+.input label{
+    margin-right: .2rem;
+}
