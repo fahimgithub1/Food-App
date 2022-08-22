@@ -20,12 +20,13 @@ export default function MeailItemsFrom({...props}){
           setAmountIsValid(false);
           return;
         }
+        setAmountIsValid(true);
     
         props.onAddToCart(enteredAmountNumber);
     };
 
     return(
-        <form className={classes.form} onSubmit2={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
             <Input 
                    ref={amountInputRef}
                    onSubmit2={submitHandler}
@@ -33,13 +34,13 @@ export default function MeailItemsFrom({...props}){
                    input={{
                      id: 'amount_' + props.id,
                      type: 'number',
-                     min: '1',
+                     min: '0',
                      max: '5',
                      step: '1',
-                     defaultValue: '1',}}
+                     defaultValue: '0',}}
             />
 
-            <button>+add</button>
+            <button type="submit">+add</button>
             {!amountIsValid && <p>Please enter a valid amount (1-5)</p>}
         </form>
     );
