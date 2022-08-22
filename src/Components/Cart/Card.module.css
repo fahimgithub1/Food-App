@@ -1,0 +1,44 @@
+.itemstyl{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    margin-bottom: .75rem;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.action{
+    text-align: right;
+}
+
+.action button{
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .65rem 2.5rem;
+}
+
+.button--alt{
+    border: 1px solid rgb(161, 62, 12);
+    background-color: white;
+}
+
+.button{
+    border: none;
+    color: white;
+    background-color: rgb(161, 62, 12);
+}
+
+.button--alt:hover{
+    border: none;
+    color: white;
+    background-color: rgb(161, 62, 12, 0.9);
+}

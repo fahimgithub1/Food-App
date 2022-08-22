@@ -31,10 +31,12 @@ const dumy_Meals = [
 
 
 const AvailableMeals = () =>{
-    const mealsList = dumy_Meals.map(meal => <MeailItems 
-                                                    name={meal.name} 
+    const mealsList = dumy_Meals.map(meal => <MeailItems
+                                                    key={meal.id}
+                                                    id={meal.id}
+                                                    name={meal.name}
+                                                    description={meal.description}
                                                     price={meal.price}
-                                                    desciption={meal.desciption}
                                               />)
 
 

@@ -1,11 +1,16 @@
+import React from 'react';
 import classes from './Input.module.css'
 
-export default function Input({...props}){
+const Input = React.forwardRef((props, ref) => {
+
 
     return(
         <div className={classes.input}>
-            <label htnlFor={props.input.id}>{props.label}</label>
-            <input {...props.input} />
+            <label htmlFor={props.input.id}>{props.label}</label>
+            <input type="sumbit" onChange={props.onSubmit2} ref={ref} {...props.input} />
         </div>
     );
-};
+});
+
+
+export default Input;
