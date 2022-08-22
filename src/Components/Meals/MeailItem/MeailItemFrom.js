@@ -34,10 +34,10 @@ export default function MeailItemsFrom({...props}){
                    input={{
                      id: 'amount_' + props.id,
                      type: 'number',
-                     min: '0',
+                     min: '1',
                      max: '5',
                      step: '1',
-                     defaultValue: '0',}}
+                     defaultValue: '1',}}
             />
 
             <button type="submit">+add</button>

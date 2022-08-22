@@ -8,7 +8,16 @@ export default function Cart({...props}){
     const cartCtx = useContext(CartContext);
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItem = cartCtx.items.length > 0;
-    const itemLangth = cartCtx.items.length;
+    // let itemLangth = cartCtx.items.length;
+
+    const cartItemAddHdler = (item) =>{
+        cartCtx.addItem({...item, amount:1})
+    }
+
+    const cartItemRemoveHandler= (id) =>{
+        cartCtx.removeItem(id);
+    }
+
 
     const cartItems =(
         <ul className={classes.itemstyl}>
@@ -17,7 +26,10 @@ export default function Cart({...props}){
                             key={item.id} 
                             name={item.name} 
                             price ={item.price} 
-                            length={itemLangth} 
+                            amount={item.amount}
+                            // length={itemLangth} 
+                            onAdd={cartItemAddHdler.bind(null, item)} 
+                            onRemove ={cartItemRemoveHandler.bind(null, item.id)}
                 />
             ))}
         </ul>
