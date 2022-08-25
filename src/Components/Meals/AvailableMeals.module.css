@@ -1,5 +1,3 @@
-
-
 .meals ul{
     list-style: none;
     text-align: left;
@@ -9,4 +7,13 @@
 
 .meals ul li{
     font-weight: 600;
+}
+
+.mealslided div{
+    background-color: rgb(24, 108, 107);
+}
+
+.isLoading{
+    text-align: center;
+    color: white;
 }
