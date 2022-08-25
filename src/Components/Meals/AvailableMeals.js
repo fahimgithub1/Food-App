@@ -34,6 +34,7 @@ import MeailItems from './MeailItem/MaailItem';
 const AvailableMeals = () =>{
     const [dumy_Meals, setDumy_Meals] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
 
 
     useEffect(()=>{
@@ -43,9 +44,14 @@ const AvailableMeals = () =>{
                 const response = await fetch(
                     'https://food-app-project-1da52-default-rtdb.firebaseio.com./Meals.json'
                 );
+
+                if(!response.ok){
+                    setIsError(true);
+                    setIsLoading(false);
+                    return;
+                }
     
                 const data = await response.json();
-    
                 let loadMeals = [];
     
                 for(const key in data){
@@ -59,7 +65,8 @@ const AvailableMeals = () =>{
     
                 setDumy_Meals(loadMeals);
             }catch(e){
-    
+                setIsError(true);
+                setIsLoading(false);
             }
  
             setIsLoading(false);
@@ -75,15 +82,15 @@ const AvailableMeals = () =>{
                                                     description={meal.description}
                                                     price={meal.price}
                                               />)
-
-    const mealsDesign = !isLoading ? classes.meals : classes.mealslided;
-
+                                     
+    let mealsDesign = !isLoading ? classes.meals : classes.mealslided;
     return(
         <section className={mealsDesign}> 
             <Card>
                 <ul>
                     {mealsList}
-                    {isLoading && <h4 className={classes.isLoading}>Data Loading.... </h4>}
+                    {isLoading && !isError && <h4 className={classes.isLoading}>Data Loading.... </h4>}
+                    {isError && <p className={classes.isEror}>There May Somting Error!</p>}
                 </ul>
             </Card>
         </section>

@@ -10,10 +10,14 @@
 }
 
 .mealslided div{
-    background-color: rgb(24, 108, 107);
+    background-color: #bc7d66;
 }
 
 .isLoading{
     text-align: center;
-    color: white;
+}
+
+.isEror{
+    text-align: center;
+    color: #8a2b06;
 }

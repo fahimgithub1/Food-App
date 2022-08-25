@@ -1,0 +1,51 @@
+.form{
+    max-height: 10rem;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+.formControl{
+    margin-bottom: .5rem;
+
+}
+
+.formControl label{
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.formControl input{
+    width: 50%;
+    border-radius: 5px;
+    height: 1.5rem;
+    border: 1px solid rgb(212, 212, 212);
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(151, 149, 149);
+}
+
+.Chakbutton{
+    color: rgb(118, 55, 30);
+    border-radius: 14px;
+    font-weight: bold;
+}
+
+.Chakbutton:hover{
+    background-color: rgb(39, 39, 93);
+    color: white;
+}
+
+.Chaksubbtn{
+    background-color: rgb(118, 55, 30);
+    color: white;
+    border-radius: 14px;
+}
+
+.Chaksubbtn:hover{
+    background-color: rgb(144, 45, 5);
+}
